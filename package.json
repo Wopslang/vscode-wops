@@ -1,0 +1,25 @@
+{
+    "name": "wopslang",
+    "displayName": "Wops",
+    "description": "Syntax highlighting for Wops",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "wops",
+            "aliases": ["Wops", "wops"],
+            "extensions": [".wops"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "wops",
+            "scopeName": "source.wops",
+            "path": "./syntaxes/wopslang.tmLanguage.json"
+        }]
+    }
+}

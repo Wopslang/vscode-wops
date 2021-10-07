@@ -1,0 +1,97 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Wopslang",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#vartype"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#func"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.wopslang",
+				"match": "\\b(if|for|return|continue|break|elif|else|const)\\b"
+			}]
+		},
+		"vartype": {
+			"patterns": [{
+				"name": "storage.type.wopslang",
+				"match": "\\b(int|string|double|bool)\\b"
+			}]
+		},
+		"func": {
+			"patterns": [{
+				"name": "entity.name.function",
+				"match": "(\\bfunc\\b)|(\\w+)(?=\\()"
+			}]
+		},
+		"number": {
+			"patterns": [{
+				"name": "constant.numeric.wops",
+				"match": "0|1|2|3|4|5|6|7|8|9"
+			}]
+		},
+		"comment": {
+			"patterns": [{
+				"name": "comment.line.double-slash.wopslang",
+				"begin": "(\\/\\/)",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.comment.wopslang"
+					}
+				},
+				"end": "(?:\\n|$)"
+			}]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"match": "&&|\\|\\||!",
+					"name": "keyword.operator.logical.wops"
+				},
+				{
+					"match": "==|!=|<|<=|>|>=",
+					"name": "keyword.operator.comparison.wops"
+				},
+				{
+					"match": "(\\+|\\-|\\*|/|%)",
+					"name": "keyword.operator.arithmetic.go"
+				},
+				{
+					"match": "=",
+					"name": "keyword.operator.assignment.go"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.wopslang",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.wopslang",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.wops"
+}
