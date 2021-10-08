@@ -1,8 +1,14 @@
 {
     "name": "wopslang",
+    "publisher": "WopsTeam",
     "displayName": "Wops",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Wopslang/vscode-wops"
+      },
     "description": "Syntax highlighting for Wops",
-    "version": "0.0.1",
+    "icon": "logo2.png",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.60.0"
     },
